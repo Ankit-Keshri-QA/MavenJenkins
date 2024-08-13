@@ -19,7 +19,7 @@ public class UITest {
 	public void startBrowser(String browserName) {
 
 		System.out.println("Parameter value is + : " + browserName);
-		WebDriver driver;
+		WebDriver driver =null;
 
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -30,7 +30,7 @@ public class UITest {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
-		} else {
+		} else if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
